@@ -4,7 +4,7 @@
  * @LastEditors: aardpro
  * @LastEditTime: 2022-06-30 22:43:54
  * @Description: 读取Svg Icon, 使用方法
- <svg-icon :name="iconName" :styleObj="{}" classList="w-[1rem] h-[1rem]" @click="onClick" />
+ <svg-icon :icon="iconName" :styleObj="{}" classList="w-[1rem] h-[1rem]" @click="onClick" />
 -->
 <template>
   <svg :class="svgClass" v-bind="$attrs" :style="styleObj">
@@ -16,7 +16,7 @@
 import { computed } from 'vue';
 
 const props = defineProps({
-  name: {
+  icon: {
     type: String,
     required: true,
   },
@@ -34,6 +34,6 @@ const props = defineProps({
   },
 });
 
-const iconName = computed(() => `#icon-${props.name}`);
-const svgClass = computed(() => `${props.baseClassList} ${props.classList} icon-${props.name}`);
+const iconName = computed(() => `#icon-${props.icon}`);
+const svgClass = computed(() => `${props.baseClassList} ${props.classList} icon-${props.icon}`);
 </script>

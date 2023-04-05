@@ -47,20 +47,5 @@ dayjs.extend(timezonePlugin);
 dayjs.locale('zh-cn');
 dayjs.tz.setDefault('Asia/Shanghai');
 
-// 返回格式化的日期; 如果日期不合法，则返回空字符串
-export function formatDate(time, fmt = 'YYYY/MM/DD') {
-  return dayjs(time).isValid() ? dayjs(time).format(fmt) : '';
-}
-
-// 注册全局用法:
-// 在main.js注册 引入
-//   import { installFormatDate } from "./utils/Day.js"
-//   app.use(installFormatDate);
-export const installFormatDate = {
-  install: (app) => {
-    app.config.globalProperties.$formatDate = formatDate;
-  },
-};
-
 // 输出引入了插件的 dayjs 实例
 export default dayjs;

@@ -13,7 +13,7 @@ import PubSub from 'pubsub-js';
 
 import PubsubNames from '@/const-data/pubsub-topics';
 
-// 检查key值是否在storage-names中定义（不允许使用未预先定义的存储值）
+// 检查key值是否在pubsub-topics文件中定义（不允许使用未预先定义的存储值）
 function validateTopic(topic) {
   if (!Object.prototype.hasOwnProperty.call(PubsubNames, topic)) {
     throw new Error(`"${topic}" undefined in pubsub-names`);

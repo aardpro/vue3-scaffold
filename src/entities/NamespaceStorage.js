@@ -2,16 +2,16 @@
  * @Author: aardpro
  * @Date: 2023-03-10 22:02:06
  * @LastEditors: aardpro
- * @LastEditTime: 2023-03-13 20:43:05
+ * @LastEditTime: 2023-04-05 14:28:48
  * @Description: 命名空间存储类，可以使用localStorage和sessionStorage
  */
 import { getLocationNamespace, safeJsonStringify, safeJsonParse } from '@/utils/';
-import StorageNames from '@/const-data/storage-names';
+import StorageNames from '@/const-data/storage-keys';
 
-// 检查key值是否在storage-names中定义（不允许使用未预先定义的存储值）
+// 检查key值是否在storage-keys中定义（不允许使用未预先定义的存储值）
 function validateKey(key) {
   if (!Object.prototype.hasOwnProperty.call(StorageNames, key)) {
-    throw new Error(`"${key}" undefined in storage-names`);
+    throw new Error(`"${key}" undefined in storage-keys`);
   }
 }
 /**
