@@ -1,0 +1,1 @@
+# [vite-plugin-html](https://www.jianshu.com/p/77cceaaa4723)
